@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    
+    <TextView
+        android:id="@+id/numbersText"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:text="Numbers"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="#FD8E09"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+
+        />
+
+    <TextView
+        android:id="@+id/familyMembersText"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:text="Family Members"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:background="#379237"
+        />
+
+    <TextView
+        android:id="@+id/colorsText"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:text="Colors"
+        android:background="#8800A0"
+        />
+    <TextView
+        android:id="@+id/phrasesText"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:layout_height="88dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:text="Phrases"
+        android:background="#16AFCA"
+        />
+
+
+</LinearLayout>
