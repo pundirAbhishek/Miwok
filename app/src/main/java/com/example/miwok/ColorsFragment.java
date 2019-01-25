@@ -1,20 +1,29 @@
 package com.example.miwok;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.miwok.R;
-
 import java.util.ArrayList;
 
-public class ColorsActivity extends AppCompatActivity {
+
+public class ColorsFragment extends Fragment {
+
+    public ColorsFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.word_list,container,false);
 
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red));
@@ -26,13 +35,12 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("black", "kululli", R.drawable.color_black));
         words.add(new Word("white", "kelelli", R.drawable.color_white));
 
-        WordAdapter numbersText = new WordAdapter(this,words,R.color.category_colors);
+        WordAdapter numbersText = new WordAdapter(getContext(),words,R.color.category_colors);
 
-        ListView listView = findViewById(R.id.words_layout);
+        ListView listView = rootView.findViewById(R.id.words_layout);
 
         listView.setAdapter(numbersText);
 
-
-
+        return rootView;
     }
 }

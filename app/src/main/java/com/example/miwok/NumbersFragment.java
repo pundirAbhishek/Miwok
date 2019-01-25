@@ -1,19 +1,31 @@
 package com.example.miwok;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+
+public class NumbersFragment extends Fragment {
+
+
+    public NumbersFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
 
+        View rootView = inflater.inflate(R.layout.word_list,container,false);
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("one", "lutti", R.drawable.number_one));
         words.add(new Word("two", "otiiko", R.drawable.number_two));
@@ -26,13 +38,13 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("nine", "wo’e", R.drawable.number_nine));
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten));
 
-        WordAdapter numbersText = new WordAdapter(this,words,R.color.category_numbers);
+        WordAdapter numbersText = new WordAdapter(getContext(),words,R.color.category_numbers);
 
-        ListView listView = findViewById(R.id.words_layout);
+        ListView listView = rootView.findViewById(R.id.words_layout);
 
         listView.setAdapter(numbersText);
-
-
+        return rootView;
     }
+
 
 }

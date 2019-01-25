@@ -1,18 +1,32 @@
 package com.example.miwok;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FamilyActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FamilyFragment extends Fragment {
+
+
+    public FamilyFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.word_list,container,false);
 
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("father", "әpә", R.drawable.family_father));
@@ -26,10 +40,12 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("grandmother ", "ama", R.drawable.family_grandmother));
         words.add(new Word("grandfather", "paapa", R.drawable.family_grandfather));
 
-        WordAdapter adapter = new WordAdapter(this,words,R.color.category_family);
+        WordAdapter adapter = new WordAdapter(getContext(),words,R.color.category_family);
 
-        ListView listView = findViewById(R.id.words_layout);
+        ListView listView = rootView.findViewById(R.id.words_layout);
 
         listView.setAdapter(adapter);
+        return rootView;
     }
+
 }
